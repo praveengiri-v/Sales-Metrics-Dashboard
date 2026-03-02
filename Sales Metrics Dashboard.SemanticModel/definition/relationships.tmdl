@@ -1,0 +1,16 @@
+relationship 9b0d969b-1e87-4b6b-977d-fd35ba2671aa
+	joinOnDateBehavior: datePartOnly
+	fromColumn: order_feedback.feedback_date
+	toColumn: LocalDateTable_6c853ec9-f431-4140-b63b-6258e27713d0.Date
+
+relationship e99164d4-6c8d-4ebb-b6d9-7f034fe173b9
+	joinOnDateBehavior: datePartOnly
+	fromColumn: sales_data.order_date
+	toColumn: LocalDateTable_b6b96c37-27ff-4d80-8915-06d670f9032f.Date
+
+relationship AutoDetected_ca1d18b7-429f-4986-81c2-67687c6d93ec
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: sales_data.order_id
+	toColumn: order_feedback.order_id
+

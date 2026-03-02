@@ -1,0 +1,594 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/bookmark/1.4.0/schema.json",
+  "displayName": "Clear 2",
+  "name": "76e0260e9f0d69beb78c",
+  "options": {
+    "targetVisualNames": []
+  },
+  "explorationState": {
+    "version": "1.3",
+    "activeSection": "76a6b1f862e4962a59fd",
+    "sections": {
+      "76a6b1f862e4962a59fd": {
+        "visualContainers": {
+          "8c8dddc12c65e86e7414": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "b533de91ccf8eef7c67e": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "49b99cd09d27b02a1174": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "3c4957d0188b9248ba04",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "All Measures"
+                        }
+                      },
+                      "Property": "Customers by Gender"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "4f87c29b2238105021c6",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "sales_data"
+                        }
+                      },
+                      "Property": "gender"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "donutChart",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "All Measures"
+                        }
+                      },
+                      "Property": "Customers by Gender"
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "Category": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "sales_data"
+                        }
+                      },
+                      "Property": "gender"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "8cb8f2e321e4f082ffe9": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "97a469d57c063920e50e",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "sales_data"
+                        }
+                      },
+                      "Property": "Age Group"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "8f635c13b286dd7680bc",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "sales_data"
+                            }
+                          },
+                          "Property": "customer_name"
+                        }
+                      },
+                      "Function": 5
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "columnChart",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "sales_data"
+                        }
+                      },
+                      "Property": "Age Group"
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "Category": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "sales_data"
+                        }
+                      },
+                      "Property": "Age Group"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "73adbbe8237ac2bcd274": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "c714debd4db27d03866a",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "All Measures"
+                        }
+                      },
+                      "Property": "Total Quantity Sold"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "8485e9c567b984321da5",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "sales_data"
+                        }
+                      },
+                      "Property": "product"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "clusteredBarChart",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "All Measures"
+                        }
+                      },
+                      "Property": "Total Quantity Sold"
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "Category": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "sales_data"
+                        }
+                      },
+                      "Property": "product"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "86b023d469442fe94600": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "a7bfa14e00025ec3bbd4",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "All Measures"
+                        }
+                      },
+                      "Property": "Product Revenue"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "ce2927701283160b9bd9",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "sales_data"
+                        }
+                      },
+                      "Property": "product"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "columnChart",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "All Measures"
+                        }
+                      },
+                      "Property": "Product Revenue"
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "Category": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "sales_data"
+                        }
+                      },
+                      "Property": "product"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "ff6b0b54b8d9d875199b": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "505e5e5b05aa0ed72415",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "All Measures"
+                        }
+                      },
+                      "Property": "Total Customers"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "cardVisual",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "All Measures"
+                        }
+                      },
+                      "Property": "Total Customers"
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "ddf4cda7192ba1e170e4": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "8141f83f01dec4923811",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "All Measures"
+                        }
+                      },
+                      "Property": "Orders by Payment Mode"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "46f1011b18d2ea1cdd08",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "sales_data"
+                        }
+                      },
+                      "Property": "payment_mode"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "donutChart",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "All Measures"
+                        }
+                      },
+                      "Property": "Orders by Payment Mode"
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "Category": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "sales_data"
+                        }
+                      },
+                      "Property": "payment_mode"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "d351acb555cab83ecc59": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "f2dd251f17b01ba980c3",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "sales_data"
+                        }
+                      },
+                      "Property": "city"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "b7c9f89e8527d0637d0a",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "sales_data"
+                        }
+                      },
+                      "Property": "category"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "1cec5cb0954ced58142a",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "sales_data"
+                        }
+                      },
+                      "Property": "gender"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Basic'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "sales_data"
+                        }
+                      },
+                      "Property": "city"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "a897c7633b6ebc015a3c": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "237a9a5fac81fe7b5e32": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "df517a7b808f4b6f5c3c": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "16d55f69cf473895eb60": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "048f8157092b6c230b40": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "31b294e6c33ea2f1455b": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "9df6410d3da18c5ba429": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {}
+            }
+          },
+          "14897dfee29c47bcbc33": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {}
+            }
+          },
+          "d97d4e5a9d89659e32a1": {
+            "singleVisual": {
+              "visualType": "image",
+              "objects": {}
+            }
+          },
+          "81134fd01360cc1ec516": {
+            "singleVisual": {
+              "visualType": "image",
+              "objects": {}
+            }
+          },
+          "2a8a7d6c213992bf262b": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "b0281070e36dd83738d6": {
+            "singleVisual": {
+              "visualType": "image",
+              "objects": {}
+            }
+          }
+        }
+      }
+    },
+    "objects": {
+      "merge": {
+        "outspacePane": [
+          {
+            "properties": {
+              "expanded": {
+                "expr": {
+                  "Literal": {
+                    "Value": "false"
+                  }
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,174 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/report/3.0.0/schema.json",
+  "themeCollection": {
+    "baseTheme": {
+      "name": "CY25SU11",
+      "reportVersionAtImport": {
+        "visual": "2.4.0",
+        "report": "3.0.0",
+        "page": "2.3.0"
+      },
+      "type": "SharedResources"
+    }
+  },
+  "objects": {
+    "section": [
+      {
+        "properties": {
+          "verticalAlignment": {
+            "expr": {
+              "Literal": {
+                "Value": "'Top'"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "outspacePane": [
+      {
+        "properties": {
+          "expanded": {
+            "expr": {
+              "Literal": {
+                "Value": "false"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "resourcePackages": [
+    {
+      "name": "SharedResources",
+      "type": "SharedResources",
+      "items": [
+        {
+          "name": "CY25SU11",
+          "path": "BaseThemes/CY25SU11.json",
+          "type": "BaseTheme"
+        }
+      ]
+    },
+    {
+      "name": "RegisteredResources",
+      "type": "RegisteredResources",
+      "items": [
+        {
+          "name": "vecteezy_3d-calendar-icon-with5342546419745752.png",
+          "path": "vecteezy_3d-calendar-icon-with5342546419745752.png",
+          "type": "Image"
+        },
+        {
+          "name": "vecteezy_dollar-money-3d-illus8902864968030508.png",
+          "path": "vecteezy_dollar-money-3d-illus8902864968030508.png",
+          "type": "Image"
+        },
+        {
+          "name": "vecteezy_blue-home-icon-on-a-r884891630527472.png",
+          "path": "vecteezy_blue-home-icon-on-a-r884891630527472.png",
+          "type": "Image"
+        },
+        {
+          "name": "vecteezy_3d-financial-growth-i2505175514035357.png",
+          "path": "vecteezy_3d-financial-growth-i2505175514035357.png",
+          "type": "Image"
+        },
+        {
+          "name": "vecteezy_3d-render-orange-cour2478977793536945.png",
+          "path": "vecteezy_3d-render-orange-cour2478977793536945.png",
+          "type": "Image"
+        },
+        {
+          "name": "vecteezy_3d-book-and-pen_4445120953922175819195.png",
+          "path": "vecteezy_3d-book-and-pen_4445120953922175819195.png",
+          "type": "Image"
+        },
+        {
+          "name": "vecteezy_3d-character-with-sho8119748470252118.png",
+          "path": "vecteezy_3d-character-with-sho8119748470252118.png",
+          "type": "Image"
+        },
+        {
+          "name": "vecteezy_3d-rendering-general-7946007092280285.png",
+          "path": "vecteezy_3d-rendering-general-7946007092280285.png",
+          "type": "Image"
+        },
+        {
+          "name": "vecteezy_ai-generated-shopping08782165605372894.png",
+          "path": "vecteezy_ai-generated-shopping08782165605372894.png",
+          "type": "Image"
+        },
+        {
+          "name": "vecteezy_elegant-modern-neighb8715704899153662.png",
+          "path": "vecteezy_elegant-modern-neighb8715704899153662.png",
+          "type": "Image"
+        },
+        {
+          "name": "vecteezy_3d-male-and-female-ge6373268045356698.png",
+          "path": "vecteezy_3d-male-and-female-ge6373268045356698.png",
+          "type": "Image"
+        },
+        {
+          "name": "vecteezy_3d-icon-analysis-char9133356956176653.png",
+          "path": "vecteezy_3d-icon-analysis-char9133356956176653.png",
+          "type": "Image"
+        },
+        {
+          "name": "vecteezy_a-woman-in-a-blue-sui3147344322057539.png",
+          "path": "vecteezy_a-woman-in-a-blue-sui3147344322057539.png",
+          "type": "Image"
+        },
+        {
+          "name": "vecteezy_hands-giving-thumbs-u21139905153401894.png",
+          "path": "vecteezy_hands-giving-thumbs-u21139905153401894.png",
+          "type": "Image"
+        },
+        {
+          "name": "vecteezy_extraordinary-minimal3789505915238338.png",
+          "path": "vecteezy_extraordinary-minimal3789505915238338.png",
+          "type": "Image"
+        },
+        {
+          "name": "vecteezy_social-media-like-thu9825750062327704.png",
+          "path": "vecteezy_social-media-like-thu9825750062327704.png",
+          "type": "Image"
+        },
+        {
+          "name": "vecteezy_3d-character-illustra6445786473457656.png",
+          "path": "vecteezy_3d-character-illustra6445786473457656.png",
+          "type": "Image"
+        },
+        {
+          "name": "vecteezy_3d-character-illustra1750056462339311.png",
+          "path": "vecteezy_3d-character-illustra1750056462339311.png",
+          "type": "Image"
+        },
+        {
+          "name": "vecteezy_3d-rendering-of-speec09804328323682732.png",
+          "path": "vecteezy_3d-rendering-of-speec09804328323682732.png",
+          "type": "Image"
+        },
+        {
+          "name": "vecteezy_3d-blue-speech-bubble20053253770710344.png",
+          "path": "vecteezy_3d-blue-speech-bubble20053253770710344.png",
+          "type": "Image"
+        },
+        {
+          "name": "vecteezy_3d-hand-holding-with-9084447889215647.png",
+          "path": "vecteezy_3d-hand-holding-with-9084447889215647.png",
+          "type": "Image"
+        }
+      ]
+    }
+  ],
+  "settings": {
+    "useStylableVisualContainerHeader": true,
+    "exportDataMode": "AllowSummarized",
+    "defaultDrillFilterOtherVisuals": true,
+    "allowChangeFilterTypes": true,
+    "useEnhancedTooltips": true,
+    "useDefaultAggregateDisplayName": true
+  }
+}

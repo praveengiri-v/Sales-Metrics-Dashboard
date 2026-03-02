@@ -1,0 +1,64 @@
+table order_feedback
+	lineageTag: b6f3dc4d-177d-4430-9903-257f16ce1ffc
+
+	column feedback_id
+		dataType: int64
+		formatString: 0
+		lineageTag: a3f46ad2-fb6e-4f05-a691-abab5b6f3dfb
+		summarizeBy: sum
+		sourceColumn: feedback_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 2178b497-ab99-4874-942c-33a6e3e81926
+		summarizeBy: none
+		sourceColumn: order_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column recommend_product
+		dataType: string
+		lineageTag: ce3ade3b-b82f-4d2a-a406-8d1534d2272b
+		summarizeBy: none
+		sourceColumn: recommend_product
+
+		annotation SummarizationSetBy = Automatic
+
+	column receive_offers
+		dataType: string
+		lineageTag: 0a2d62ca-44a2-491a-a574-45538141a5c1
+		summarizeBy: none
+		sourceColumn: receive_offers
+
+		annotation SummarizationSetBy = Automatic
+
+	column feedback_date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 750a023a-b203-47ad-b946-e02bad04f7ca
+		summarizeBy: none
+		sourceColumn: feedback_date
+
+		variation Variation
+			isDefault
+			relationship: 9b0d969b-1e87-4b6b-977d-fd35ba2671aa
+			defaultHierarchy: LocalDateTable_6c853ec9-f431-4140-b63b-6258e27713d0.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	partition order_feedback = m
+		mode: import
+		source =
+				let
+				    Source = MySQL.Database("localhost", "project_db", [ReturnSingleDatabase=true]),
+				    project_db_order_feedback = Source{[Schema="project_db",Item="order_feedback"]}[Data]
+				in
+				    project_db_order_feedback
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

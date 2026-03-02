@@ -1,0 +1,144 @@
+table sales_data
+	lineageTag: ccb1a8fa-9bc3-45fa-8349-562813062812
+
+	column order_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 74cfe14b-5091-4cda-b4e9-53f78c51a25e
+		summarizeBy: none
+		sourceColumn: order_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column customer_name
+		dataType: string
+		lineageTag: 7e8a5bd7-913b-4586-8941-c3b513ae4808
+		summarizeBy: none
+		sourceColumn: customer_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column gender
+		dataType: string
+		lineageTag: f64cf842-fe39-4976-aa81-bc5045433f80
+		summarizeBy: none
+		sourceColumn: gender
+
+		annotation SummarizationSetBy = Automatic
+
+	column age
+		dataType: int64
+		formatString: 0
+		lineageTag: 3c8e3e4e-2b8c-4bbe-b817-53528fabe837
+		summarizeBy: sum
+		sourceColumn: age
+
+		annotation SummarizationSetBy = Automatic
+
+	column city
+		dataType: string
+		lineageTag: 6d51ec45-f4c7-4389-8787-766202d9bb5b
+		summarizeBy: none
+		sourceColumn: city
+
+		annotation SummarizationSetBy = Automatic
+
+	column product
+		dataType: string
+		lineageTag: 0fb914d4-2779-4552-a608-6e208c1e11e4
+		summarizeBy: none
+		sourceColumn: product
+
+		annotation SummarizationSetBy = Automatic
+
+	column category
+		dataType: string
+		lineageTag: e024505c-7f84-4463-b546-69b5ede4920d
+		summarizeBy: none
+		sourceColumn: category
+
+		annotation SummarizationSetBy = Automatic
+
+	column quantity
+		dataType: int64
+		formatString: 0
+		lineageTag: 5f59b822-c8c3-48b1-942f-6b55a865b1ad
+		summarizeBy: sum
+		sourceColumn: quantity
+
+		annotation SummarizationSetBy = Automatic
+
+	column unit_price
+		dataType: double
+		lineageTag: f5e86ffa-bcc2-47e6-b7d4-1564ab30265f
+		summarizeBy: sum
+		sourceColumn: unit_price
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column discount
+		dataType: double
+		lineageTag: 42866f41-51a8-4b05-8d3d-cd065bb7b961
+		summarizeBy: sum
+		sourceColumn: discount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column payment_mode
+		dataType: string
+		lineageTag: 3dd53749-029e-4979-823a-115fe931cc61
+		summarizeBy: none
+		sourceColumn: payment_mode
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: dad2237d-1d33-47cb-9b48-2acadabadb75
+		summarizeBy: none
+		sourceColumn: order_date
+
+		variation Variation
+			isDefault
+			relationship: e99164d4-6c8d-4ebb-b6d9-7f034fe173b9
+			defaultHierarchy: LocalDateTable_b6b96c37-27ff-4d80-8915-06d670f9032f.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Age Group' = ```
+			
+			SWITCH(
+			    TRUE(),
+			    sales_data[age] <= 25, "18–25",
+			    sales_data[age] <= 35, "26–35",
+			    sales_data[age] <= 45, "36–45",
+			    "46+"
+			)
+			
+			```
+		lineageTag: e9c820dd-0f02-441f-9c55-a03b15a0cef2
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition sales_data = m
+		mode: import
+		source =
+				let
+				    Source = MySQL.Database("localhost", "project_db", [ReturnSingleDatabase=true]),
+				    project_db_sales_data = Source{[Schema="project_db",Item="sales_data"]}[Data],
+				    #"Replaced Value" = Table.ReplaceValue(project_db_sales_data,"Phone","Mobile",Replacer.ReplaceText,{"product"})
+				in
+				    #"Replaced Value"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

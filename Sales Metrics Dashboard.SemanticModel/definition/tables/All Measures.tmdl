@@ -1,0 +1,227 @@
+table 'All Measures'
+	lineageTag: 425adf3f-5114-44a0-ae73-bc19259b90a4
+
+	measure 'Total Orders' = ```
+			
+			COUNT(sales_data[order_id])
+			
+			```
+		lineageTag: 2b90c8fa-8280-4aee-b93e-7014664c91b0
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Total Revenue' = ```
+			
+			SUMX(
+			    sales_data,
+			    sales_data[quantity] * sales_data[unit_price] *
+			    (1 - sales_data[discount] / 100)
+			)
+			
+			```
+		lineageTag: 9876f5bf-5ac5-4f4d-a92a-4233c680fd56
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Average Order Value' = ```
+			
+			DIVIDE([Total Revenue], [Total Orders])
+			
+			```
+		lineageTag: ad1943fa-4e5b-4eef-97d4-9ee018b874ad
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Average Discount %' = ```
+			
+			AVERAGE(sales_data[discount]) / 100
+			
+			```
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 1418e5ca-ddee-409d-982d-b06eaa3b9418
+
+	measure 'Revenue by Category' = ```
+			
+			[Total Revenue]
+			
+			```
+		lineageTag: ee6a3a19-9ba1-4153-8dfd-0c2bd170a73a
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Revenue by City' = ```
+			
+			[Total Revenue]
+			
+			```
+		lineageTag: 97db8ff4-4136-417e-b8e7-aae77f2080c2
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Orders Over Time' = ```
+			
+			COUNT(sales_data[order_id])
+			
+			```
+		formatString: 0
+		lineageTag: 022601b4-61e0-493f-98ca-f43a2ea288f6
+
+	measure 'Total Customers' = ```
+			
+			DISTINCTCOUNT(sales_data[customer_name])
+			
+			```
+		formatString: 0
+		lineageTag: 1c4e02bd-ddaf-46fa-8e6d-21dc09b6aa9f
+
+	measure 'Customers by Gender' = ```
+			
+			COUNT(sales_data[customer_name])
+			
+			```
+		formatString: 0
+		lineageTag: dd9c689d-711a-4ee0-8b20-631331f546bb
+
+	measure 'Total Quantity Sold' = ```
+			
+			SUM(sales_data[quantity])
+			
+			```
+		formatString: 0
+		lineageTag: 31882d84-7302-49f1-b505-00415f738156
+
+	measure 'Product Revenue' = ```
+			
+			[Total Revenue]
+			
+			```
+		lineageTag: 4eb11819-6c2c-4b1e-bb4a-6b2f70cb7589
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Orders by Payment Mode' = ```
+			
+			COUNT(sales_data[order_id])
+			
+			```
+		formatString: 0
+		lineageTag: b4ba93b7-571d-4668-8480-41e2c694788e
+
+	measure 'Recommend Yes' = ```
+			
+			CALCULATE(
+			    COUNT(order_feedback[feedback_id]),
+			    order_feedback[recommend_product] = "Yes"
+			)
+			
+			```
+		formatString: 0
+		lineageTag: 44266af5-b8c6-4e85-a71f-fa62cb6f5af3
+
+	measure 'Recommendation %' = ```
+			
+			DIVIDE(
+			    [Recommend Yes],
+			    [Total Feedback],
+			    0
+			)
+			
+			```
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: b69c2d5f-03d2-44b6-8ea5-ae0b187785e3
+
+	measure 'Receive Offers Yes' = ```
+			
+			CALCULATE(
+			    COUNT(order_feedback[feedback_id]),
+			    order_feedback[receive_offers] = "Yes"
+			)
+			
+			```
+		formatString: 0
+		lineageTag: 48feb39b-5be2-4a2e-a885-9196355d9ca6
+
+	measure 'Receive Offers Yes %' = ```
+			
+			DIVIDE(
+			    [Receive Offers Yes],
+			    [Total Feedback],
+			    0
+			)
+			
+			```
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: b263f73a-9a0f-4940-b74d-c57cef5e7a7b
+
+	measure 'Revenue from Recommended' = ```
+			
+			CALCULATE(
+			    [Total Revenue],
+			    order_feedback[recommend_product] = "Yes"
+			)
+			
+			```
+		lineageTag: 6cee87aa-a2e7-4a9a-baf2-378ecd9b42f4
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Revenue from Not Recommended' = ```
+			
+			CALCULATE(
+			    [Total Revenue],
+			    order_feedback[recommend_product] = "No"
+			)
+			
+			```
+		lineageTag: 82588275-5cef-46db-892a-23410dd68f8d
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'High Discount Orders %' = ```
+			
+			DIVIDE(
+			    CALCULATE(
+			        COUNT(sales_data[order_id]),
+			        sales_data[discount] >= 10
+			    ),
+			    [Total Orders]
+			)
+			
+			```
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 744b03d6-1998-44de-8e18-e64538e6061f
+
+	measure 'Returning Customers' = ```
+			
+			CALCULATE(
+			    DISTINCTCOUNT(sales_data[customer_name]),
+			    FILTER(
+			        sales_data,
+			        CALCULATE(COUNT(sales_data[order_id])) > 1
+			    )
+			)
+			
+			```
+		formatString: 0
+		lineageTag: 08dc1ec4-9dbf-4b09-b69f-c684060cdbb5
+
+	measure 'Total Feedback' = ```
+			
+			COUNT(order_feedback[feedback_id])
+			
+			```
+		formatString: 0
+		lineageTag: ffdc4d5e-70fc-42a3-8638-b0e29cca987e
+
+	partition 'All Measures' = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Column1 = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Column1", type text}}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Changed Type",{"Column1"})
+				in
+				    #"Removed Columns"
+
+	annotation PBI_ResultType = Table
+
